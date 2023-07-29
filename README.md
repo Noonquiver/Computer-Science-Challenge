@@ -1,11 +1,11 @@
 # Computer-Science-Challenge
-LeetCode profile
+##LeetCode profile
 https://leetcode.com/Noonquiver/
 
-Exercise #1: Merge Two 2D arrays by Summing Values
+###Exercise #1: Merge Two 2D arrays by Summing Values
 https://leetcode.com/submissions/detail/1004703812/
 In order to solve this exercise I first summed the values with ids found on BOTH arrays and then added the values with ids only found in one array to finally sort the resulting array.
 
-Exercise #2: Path with Maximum Gold
+###Exercise #2: Path with Maximum Gold
 https://leetcode.com/submissions/detail/1004895810/
 I approached this exercise using Deep-First Search (DFS) algorithm which ends up exploring every possible path in order to find the solution.
