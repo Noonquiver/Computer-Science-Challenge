@@ -1,6 +1,7 @@
 # Computer-Science-Challenge
 ## LeetCode profile
 https://leetcode.com/Noonquiver/
+**Each exercise was solved using Swift programming language.**
 
 ### _Exercise #1: Merge Two 2D arrays by Summing Values_
 https://leetcode.com/submissions/detail/1004703812/
