@@ -176,14 +176,66 @@ class Solution {
 }
 ```
 ### _Exercise #3: Shortest Path Visiting All Nodes_
-
-<p></p>
+https://leetcode.com/submissions/detail/1011798221/
+<p>I approached this exercise using Breadth-First Search (BFS) to explore all possible paths in the graph and since this algorithm visits nodes in increasing order of distance, the first time there's a state in which every node has been visited, it means it is the shortest path.</p>
 
 #### _Time complexity_
-<p>O() because </p>
-
+<p>O(n * 2^n) because states are combinations of visited nodes so there can be 2^n states in the queue plus the fact that inside the while loop is a for loop with O(n) complexity because a node could be connected to every other node.</p>
 #### _Space complexity_
-<p>O() because </p>
+<p>O(2^n) because every possible state (so 2^n) could be added to the "visitedStates" set.</p>
 
 ```swift
+class Solution {
+    // Structure that represents a state which has a current node and a boolean array representing which nodes have been visited.
+    struct State: Hashable {
+        let node: Int
+        let visitedNodes: [Bool]
+    }
+    
+    func shortestPathLength(_ graph: [[Int]]) -> Int {
+        let graphLength = graph.count // Number of nodes in the graph.
+
+        // A set to store states that have been visited.
+        var visitedStates = Set<State>()
+        // A queue to store states that not being processed yet along with their distances from the initial state.
+        var queue: [(state: State, distance: Int)] = []
+
+        // For each node in the graph, a state is initialized with just that node being visited to then enqueue it.
+        (0 ..< graphLength).forEach { index in
+            var visitedNodesInitialState = [Bool](repeating: false, count: graphLength) // Array of size "graphLength" of booleans initialized to false.
+            visitedNodesInitialState[index] = true // Mark the current node as visited.
+            let initialState = State(node: index, visitedNodes: visitedNodesInitialState)
+
+            queue.append((state: initialState, distance: 0))
+            visitedStates.insert(initialState)
+        }
+
+        // Continue processing until the queue is empty.
+        while !queue.isEmpty {
+            let (state, distance) = queue.removeFirst()
+
+            // If every node has been visited (all booleans in the array are set to true), return the distance as it represents the shortest path.
+            if state.visitedNodes.filter({$0}).count == graphLength {
+                return distance
+            }
+
+            let neighbors = graph[state.node] // Get neighbors of the current node.
+
+            // For each neighbor, if it has not been visited in the current state, enqueue a new state with that node marked as visited.
+            neighbors.forEach { neighbor in
+                var nextVisited = state.visitedNodes
+                nextVisited[neighbor] = true
+                let nextState = State(node: neighbor, visitedNodes: nextVisited)
+
+                if !visitedStates.contains(nextState) {
+                    visitedStates.insert(nextState)
+                    queue.append((state: nextState, distance: distance + 1))
+                }
+            }
+        }
+
+        // In case a solution isn't found.
+        return -1
+    }
+}
 ```
