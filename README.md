@@ -54,7 +54,7 @@ https://leetcode.com/submissions/detail/1011748933/
 <p>O((n + m) log (n + m)) because sorting "mergedArray" is the dominant term.</p>
 
 #### _Space complexity_
-<p>O(n + m) because **mergedArray** holds elements from "nums1" and "nums2".</p>
+<p>O(n + m) because "mergedArray" holds elements from "nums1" and "nums2".</p>
 
 ```swift
 //Optimized solution
