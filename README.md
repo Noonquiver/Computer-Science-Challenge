@@ -181,6 +181,7 @@ https://leetcode.com/submissions/detail/1011798221/
 
 #### _Time complexity_
 <p>O(n * 2^n) because states are combinations of visited nodes so there can be 2^n states in the queue plus the fact that inside the while loop is a for loop with O(n) complexity because a node could be connected to every other node.</p>
+
 #### _Space complexity_
 <p>O(2^n) because every possible state (so 2^n) could be added to the "visitedStates" set.</p>
 
