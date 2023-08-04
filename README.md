@@ -8,10 +8,10 @@ https://leetcode.com/submissions/detail/1004703812/
 <p>In order to solve this exercise I first summed the values with ids found on BOTH arrays and then added the values with ids only found in one array to finally sort the resulting array.</p>
 
 #### _Time complexity_
-<p>O(n * m * (n + m)) because the filtering done inside the inner loop is the dominant term, also note that the complexity is cubic and that O(n) is for the copy of **nums1** and O(m) is fot the copy of **nums2**.</p>
+<p>O(n * m * (n + m)) because the filtering done inside the inner loop is the dominant term, also note that the complexity is cubic and that O(n) is for the copy of "nums1" and O(m) is for the copy of "nums2".</p>
 
 #### _Space complexity_
-<p>O(n + m) because **mergedArray** holds elements from **nums1** and **nums2**.</p>
+<p>O(n + m) because "mergedArray" holds elements from "nums1" and "nums2".</p>
 
 ```swift
 class Solution {
@@ -51,10 +51,10 @@ https://leetcode.com/submissions/detail/1011748933/
 <p>To optimize this exercise I converted each array in a dictionary, merged them into another and sorted it, successfully eliminating the nested loop issue.</p>
 
 #### _Time complexity_
-<p>O((n + m) log (n + m)) because sorting **mergedArray** is the dominant term.</p>
+<p>O((n + m) log (n + m)) because sorting "mergedArray" is the dominant term.</p>
 
 #### _Space complexity_
-<p>O(n + m) because **mergedArray** holds elements from **nums1** and **nums2**.</p>
+<p>O(n + m) because **mergedArray** holds elements from "nums1" and "nums2".</p>
 
 ```swift
 //Optimized solution
@@ -109,7 +109,7 @@ https://leetcode.com/submissions/detail/1011747864/
 <p>O(n^2 * m^2) because it would have to check each cell in the n * m size grid once.</p>
 
 #### _Space complexity_
-<p>O(n * m) because **visitedCells** holds at most n * m elements, the number of cells.</p>
+<p>O(n * m) because "visitedCells" holds at most n * m elements, the number of cells.</p>
 
 ```swift
 class Solution {
